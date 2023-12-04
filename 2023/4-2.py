@@ -21,7 +21,7 @@ for card_index, card in enumerate(cards):
             win_count += 1
 
     for i in range(card_index + 1, card_index + 1 + win_count):
-        card_counts[i] += 1 * card_counts[card_index]
+        card_counts[i] += card_counts[card_index]
 
 print(card_counts)
 print(sum(card_counts.values()))
