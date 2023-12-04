@@ -1,11 +1,11 @@
 with open("4-input.txt", "r") as input:
-    lines = input.readlines()
+    cards = input.readlines()
 
 total = 0
 
-for line in lines:
-    winning_numbers = line.split("|")[0].split(":")[1].split(" ")
-    our_numbers = line.split("|")[1].split(" ")
+for card in cards:
+    winning_numbers = card.split("|")[0].split(":")[1].split(" ")
+    our_numbers = card.split("|")[1].split(" ")
 
     points = 0
 
