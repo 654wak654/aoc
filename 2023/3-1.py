@@ -31,16 +31,17 @@ def find_num_at_index(line_index, char_index):
 
     return 0
 
+
 for line_index, line in enumerate(lines):
     for char_index, char in enumerate(line):
         if char in ["*", "#", "+", "$", "%", "-", "/", "@", "=", "&"]:
-            total += find_num_at_index(line_index - 1, char_index - 1) # top_left
-            total += find_num_at_index(line_index - 1, char_index) # top
-            total += find_num_at_index(line_index - 1, char_index + 1) # top_right
-            total += find_num_at_index(line_index, char_index - 1) # left
-            total += find_num_at_index(line_index, char_index + 1) # right
-            total += find_num_at_index(line_index + 1, char_index - 1) # bottom_left
-            total += find_num_at_index(line_index + 1, char_index) # bottom
-            total += find_num_at_index(line_index + 1, char_index + 1) # bottom_right
+            total += find_num_at_index(line_index - 1, char_index - 1)  # top_left
+            total += find_num_at_index(line_index - 1, char_index)  # top
+            total += find_num_at_index(line_index - 1, char_index + 1)  # top_right
+            total += find_num_at_index(line_index, char_index - 1)  # left
+            total += find_num_at_index(line_index, char_index + 1)  # right
+            total += find_num_at_index(line_index + 1, char_index - 1)  # bottom_left
+            total += find_num_at_index(line_index + 1, char_index)  # bottom
+            total += find_num_at_index(line_index + 1, char_index + 1)  # bottom_right
 
 print(total)

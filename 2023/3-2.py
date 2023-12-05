@@ -31,19 +31,24 @@ def find_num_at_index(line_index, char_index):
 
     return 0
 
+
 for line_index, line in enumerate(lines):
     for char_index, char in enumerate(line):
         if char == "*":
             gears = []
 
-            gears.append(find_num_at_index(line_index - 1, char_index - 1)) # top_left
-            gears.append(find_num_at_index(line_index - 1, char_index)) # top
-            gears.append(find_num_at_index(line_index - 1, char_index + 1)) # top_right
-            gears.append(find_num_at_index(line_index, char_index - 1)) # left
-            gears.append(find_num_at_index(line_index, char_index + 1)) # right
-            gears.append(find_num_at_index(line_index + 1, char_index - 1)) # bottom_left
-            gears.append(find_num_at_index(line_index + 1, char_index)) # bottom
-            gears.append(find_num_at_index(line_index + 1, char_index + 1)) # bottom_right
+            gears.append(find_num_at_index(line_index - 1, char_index - 1))  # top_left
+            gears.append(find_num_at_index(line_index - 1, char_index))  # top
+            gears.append(find_num_at_index(line_index - 1, char_index + 1))  # top_right
+            gears.append(find_num_at_index(line_index, char_index - 1))  # left
+            gears.append(find_num_at_index(line_index, char_index + 1))  # right
+            gears.append(
+                find_num_at_index(line_index + 1, char_index - 1)
+            )  # bottom_left
+            gears.append(find_num_at_index(line_index + 1, char_index))  # bottom
+            gears.append(
+                find_num_at_index(line_index + 1, char_index + 1)
+            )  # bottom_right
 
             # Filter 0s out of gears
             while True:

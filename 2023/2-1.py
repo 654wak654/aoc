@@ -31,7 +31,11 @@ for line in lines:
         if blue > max_blue_drawn:
             max_blue_drawn = blue
 
-    if max_red_drawn <= max_red and max_green_drawn <= max_green and max_blue_drawn <= max_blue:
+    if (
+        max_red_drawn <= max_red
+        and max_green_drawn <= max_green
+        and max_blue_drawn <= max_blue
+    ):
         total += game_id
 
 print(total)
