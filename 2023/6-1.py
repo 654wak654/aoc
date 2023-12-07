@@ -19,7 +19,7 @@ for race in races:
     # Hold for up to x secs
     for i in range(1, race[0]):
         dist = (race[0] - i) * i
-        
+
         if dist > race[1]:
             wins += 1
 
