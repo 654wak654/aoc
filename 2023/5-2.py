@@ -1,3 +1,4 @@
+from os import cpu_count
 from concurrent.futures import ProcessPoolExecutor, as_completed
 
 with open("5-input.txt", "r") as f:
@@ -65,7 +66,7 @@ def get_min_for_range(i):
     return min_loc
 
 
-with ProcessPoolExecutor() as executor:
+with ProcessPoolExecutor(max_workers=cpu_count() - 4) as executor:
     min_location = 99999999999999999999
     futures = set()
 
