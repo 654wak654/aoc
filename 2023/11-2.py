@@ -26,21 +26,22 @@ for y in range(len(image[0])):
         if image[x][y] == "#":
             galaxies.append((x, y))
 
-# TODO: Keep list of expanded rows/columns, add them to the diff as they come up
-
 distances = 0
 
 for i in range(len(galaxies)):
     galaxy = galaxies[i]
 
     for other_galaxy in galaxies[i + 1 :]:
-        # TODO: these should be all the indexes between rn, check them against erows & ecolumns
-        x_indexes = list(
-            range(min(other_galaxy[0], galaxy[0]) + 1, max(other_galaxy[0], galaxy[0]))
+        x_ranges = range(
+            min(other_galaxy[0], galaxy[0]), max(other_galaxy[0], galaxy[0])
         )
+        x_range = sum([(1000000 if x in erows else 1) for x in x_ranges])
 
-        y_indexes = list(
-            range(min(other_galaxy[1], galaxy[1]) + 1, max(other_galaxy[1], galaxy[1]))
+        y_ranges = range(
+            min(other_galaxy[1], galaxy[1]), max(other_galaxy[1], galaxy[1])
         )
+        y_range = sum([(1000000 if x in ecolumns else 1) for x in y_ranges])
+
+        distances += x_range + y_range
 
 print(distances)
