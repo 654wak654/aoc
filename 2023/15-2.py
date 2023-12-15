@@ -19,7 +19,7 @@ for step in inn.replace("\n", "").split(","):
     for c in label:
         hash += ord(c)
         hash *= 17
-        hash = hash % 256
+        hash %= 256
 
     if lens is not None:
         boxes[hash][label] = int(lens)
