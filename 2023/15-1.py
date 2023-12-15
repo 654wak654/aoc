@@ -7,9 +7,7 @@ for step in inn.replace("\n", "").split(","):
     hash = 0
 
     for c in step:
-        hash += ord(c)
-        hash *= 17
-        hash = hash % 256
+        hash = (hash + ord(c)) * 17 % 256
 
     total += hash
 
